@@ -1,0 +1,172 @@
+.card {
+
+    perspective: 100rem;
+    -moz-perspective: 100rem;
+    position: relative;
+    height: 43rem;
+}
+
+.cardSide {
+    background-color: rgb(21, 241, 238);
+    font-size: 6rem;
+    height: 43rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .8s ease;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: .7rem;
+    border-radius: 2.3rem;
+    border-bottom-left-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
+    box-shadow: 0 1rem 2rem 1rem #4a4444b7;
+}
+
+.cardSideFront {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    justify-content: flex-start;
+    background-color: #a9b80db1;
+    padding: 0;
+    border-radius: 2.3rem;
+
+}
+
+.image {
+    border-top-left-radius: 2.3rem;
+    border-top-right-radius: 2.3rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-color: #08e372;
+    height: 65%;
+    clip-path: polygon(100% 0, 100% 86%, 61% 86%, 50% 100%, 0 100%, 0 0);
+    /*  clip-path: polygon(100% 0, 100% 81%, 61% 81%, 50% 100%, 0 100%, 0 0);
+ */
+
+}
+
+.image img {
+    border-top-left-radius: 1.3rem;
+    border-top-right-radius: 1.3rem;
+    height: 100%;
+    width: 100%;
+
+}
+
+.card-specs--1 {
+    position: absolute;
+    top: 57%;
+    left: 60%;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius: .7rem;
+    background-color: #263ba46b;
+    padding: .07rem .6rem;
+    color: #e3dae6;
+}
+
+.card-specs--2 {
+    position: absolute;
+    top: 57%;
+    left: 72%;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius: .7rem;
+    background-color: #263ba46b;
+    padding: .07rem .6rem;
+    color: #e3dae6;
+}
+
+.card-specs--3 {
+    position: absolute;
+    top: 61%;
+    left: 55%;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius: .7rem;
+    background-color: #263ba46b;
+    padding: .04rem .6rem;
+    color: #e3dae6;
+}
+
+.content {
+    flex-grow: 1;
+    border-bottom-left-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
+    background-image: linear-gradient(to right bottom, #e6710b, #970b66);
+
+}
+
+.cardHeading {
+    padding: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ece9da;
+    text-transform: capitalize;
+}
+
+.brfdesc {
+    color: #a1a2b3;
+    font-weight: 400;
+    padding: 1rem;
+    font-size: 1.9rem;
+}
+
+
+.cardSideBack {
+    color: #fff;
+    transform: rotateY(180deg);
+    background-image: linear-gradient(to right bottom, #07cc66e9, #06556b);
+
+}
+
+.cardbackcontent {
+    width: 65%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.btn-showmore,
+.btn-showmore:visited,
+.btn-showmore:link {
+    color: #efe0e0;
+    font-size: 2rem;
+    border-radius: 2.9rem;
+    text-align: center;
+    padding: 2rem 3rem;
+    background-color: #ffffff52;
+    cursor: pointer;
+    transition: all .4s;
+    box-shadow: 0 .6rem .7rem #0d6246dc;
+}
+
+.btn-showmore:hover {
+    transform: translateY(-.9rem);
+    background-color: #6ea515;
+    box-shadow: 0 3.2rem 2.7rem #0d6246dc;
+}
+
+.btn-showmore:active {
+    transform: translateY(-.2rem);
+    background-color: #9dc705;
+    box-shadow: 0 1.2rem 1.2rem 0 #14583db9;
+}
+
+.bloglink {
+    text-decoration: none;
+
+}
+
+.card:hover .cardSideFront {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .cardSideBack {
+    transform: rotateY(0deg);
+}

@@ -1,0 +1,140 @@
+.header {
+  height: 85vh;
+  background-image: linear-gradient(to right, rgba(11, 5, 130, 0.899), rgba(244, 7, 248, 0.842));
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 10% 100%, 0 100%);
+  position: relative;
+  font-family: 'Caveat', cursive;
+  backface-visibility: hidden;
+
+}
+
+.header p {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-weight: 700;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.maintagline {
+  display: block;
+  font-size: 7.9rem;
+  font-family: 'IBM Plex Mono', monospace;
+  animation: movetoright 1s ease-in-out .3s;
+  animation-fill-mode: both;
+
+}
+
+
+.subtagline {
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  font-size: 4.3rem;
+  font-weight: 400;
+  font-family: 'Caveat', cursive;
+  animation: movetoleft 1s ease-in-out 1s;
+  animation-fill-mode: both;
+}
+
+
+.mainFlexContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+  border-radius: 1.2rem;
+
+}
+
+.flexItems {
+  font-size: 2rem;
+  flex: 0 0 33rem;
+  margin: 3px;
+  padding: 3px;
+  padding-top: 1.7rem;
+  border-radius: 1.3rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+/* .flexItems:hover {
+  transform: translateY(-2rem);
+  box-shadow: 0 3.2rem 6.4rem 2rem rgba(0, 0, 0, 0.739);
+  cursor: pointer;
+
+} */
+
+
+
+/* Animations */
+
+@keyframes movetoright {
+  0% {
+    opacity: 0;
+    transform: translate(-100px);
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translate(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes movetoleft {
+  0% {
+    opacity: 0;
+    transform: translate(100px);
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translate(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width:1290px) {
+  .maintagline {
+    font-size: 4.6rem;
+  }
+
+  .subtagline {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (max-width:980px) {
+  .maintagline {
+    font-size: 3.9rem;
+  }
+
+  .subtagline {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (max-width:850px) {
+  .maintagline {
+    font-size: 3.4rem;
+  }
+
+  .subtagline {
+    font-size: 2.2rem;
+  }
+}
