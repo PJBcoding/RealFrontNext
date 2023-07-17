@@ -6,6 +6,7 @@ import Image from 'next/image'
 const Blog_Content = async({params}) => {
  
   let blg_details="First Value"
+  let blg_heading="This is static heading"
   
   const get_blog_details=async()=>{
     console.log("From Blogitem Page Blog Id is ---->"+params.blogid)
@@ -18,24 +19,24 @@ const Blog_Content = async({params}) => {
    console.log(blogdetbyid)
    
    blg_details= await blogdetbyid.blogdesc
+   blg_heading=await blogdetbyid.blog_heading
    console.log("After dynamic api route execution ------>"+blg_details)
-   return blg_details;
+   return {"blg_details":blg_details,"blg_heading":blg_heading};
   }
   
   await get_blog_details();
  
 return (
-    <div className={styles.maincontainer}>
+   
     <div className={styles.blogdetailgrid}>
       
-      <div className={styles.imgframe}> <Image className={styles.imgspecs} src={'/blog.jpg'}  fill={true} /> </div>
-        <h1 className={styles.heading}>Heading {params.heading}</h1>
-        <h1 className={styles.category}>This is the content of the blog and the id is : {params.blogid}</h1>
+      <div className={styles.imgframe}> <img className={styles.imgspecs} src={'/blog.jpg'}  fill={true} /> </div>
+       <div className={styles.heading}> Heading : {params.heading}{(await get_blog_details()).blg_heading}</div>
+       <div className={styles.category}>This is the content of the blog and the id is : {params.blogid}  </div> 
         
-        <h1 className={styles.article}>{blg_details?blg_details:get_blog_details()}</h1>
-        
+       <div className={styles.article}> &nbsp;&nbsp;&nbsp; {blg_details?blg_details:(await get_blog_details()).blg_details} <p></p></div>
     </div> 
-    </div>
+    
   )
 }
 

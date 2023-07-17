@@ -1,6 +1,6 @@
 .header {
   height: 85vh;
-  background-image: linear-gradient(to right, rgba(11, 5, 130, 0.899), rgba(244, 7, 248, 0.842));
+  background-image: linear-gradient(to right, rgba(61, 12, 159, 0.648), rgba(190, 8, 222, 0.591)), url(../../public/bgov2.jpg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 10% 100%, 0 100%);
@@ -20,12 +20,52 @@
   transform: translate(-50%, -50%);
 }
 
+.spanText {
+  color: #f1f509;
+  font-size: 3.2rem;
+  position: absolute;
+  top: 60%;
+  left: 41%;
+  animation: span_Anim1 1s ease-in 2s;
+
+  animation-fill-mode: both;
+  z-index: 7;
+
+}
+
+.blogimg {
+  width: 55rem;
+  height: 55rem;
+  position: absolute;
+  top: -70%;
+  left: -70%;
+  animation: rlupky .3s ease-out 2.3s;
+  animation-fill-mode: both;
+  z-index: 2;
+}
+
+.rlup {
+
+  width: 25rem;
+  height: 25rem;
+  position: absolute;
+  top: 40%;
+  left: 75%;
+  animation: rlupky .3s ease-out 2s;
+  animation-fill-mode: both;
+
+
+}
+
 .maintagline {
   display: block;
+  z-index: 77;
+  position: relative;
   font-size: 7.9rem;
   font-family: 'IBM Plex Mono', monospace;
   animation: movetoright 1s ease-in-out .3s;
   animation-fill-mode: both;
+
 
 }
 
@@ -109,6 +149,117 @@
   }
 }
 
+@keyframes span_Anim1 {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+
+  }
+
+  80% {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rlupky {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  30% {
+    opacity: 0.2;
+    transform: translateY(80px);
+  }
+
+  60% {
+    opacity: 0.4;
+    transform: translateY(60px);
+  }
+
+
+  80% {
+    opacity: 0.7;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes wiggle {
+
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+
+  15% {
+    transform: rotateZ(-15deg);
+  }
+
+  20% {
+    transform: rotateZ(10deg);
+  }
+
+  25% {
+    transform: rotateZ(-10deg);
+  }
+
+  30% {
+    transform: rotateZ(6deg);
+  }
+
+  35% {
+    transform: rotateZ(-4deg);
+  }
+
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+
+/* Media Queries */
+@media screen and (max-width:1479px) {
+  .maintagline {
+    font-size: 6.5rem;
+  }
+
+  .subtagline {
+    font-size: 3.9rem;
+  }
+
+  .spanText {
+    font-size: 2.7rem;
+  }
+
+  .rlup {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .blogimg {
+    width: 45rem;
+    height: 45rem;
+    position: absolute;
+    top: -70%;
+    left: -70%;
+
+  }
+
+}
+
 @media screen and (max-width:1290px) {
   .maintagline {
     font-size: 4.6rem;
@@ -117,7 +268,28 @@
   .subtagline {
     font-size: 3.2rem;
   }
+
+  .spanText {
+    font-size: 2.5rem;
+  }
+
+  .rlup {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .blogimg {
+    width: 35rem;
+    height: 35rem;
+    position: absolute;
+    top: -70%;
+    left: -70%;
+
+  }
+
 }
+
+
 
 @media screen and (max-width:980px) {
   .maintagline {
@@ -127,14 +299,99 @@
   .subtagline {
     font-size: 2.7rem;
   }
+
+  .spanText {
+    font-size: 2.2rem;
+  }
+
+  .rlup {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .spanText {
+    font-size: 2.2rem;
+    position: absolute;
+    top: 60%;
+    left: 35%;
+
+  }
+
+  .blogimg {
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    top: 35%;
+    left: -65%;
+
+  }
 }
 
 @media screen and (max-width:850px) {
   .maintagline {
-    font-size: 3.4rem;
+    font-size: 3.1rem;
   }
 
   .subtagline {
+    font-size: 1.5rem;
+  }
+
+  .blogimg {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    top: 30%;
+    left: -50%;
+
+  }
+
+  .spanText {
+    font-size: 1.7rem;
+    position: absolute;
+    top: 60%;
+    left: 31%;
+
+  }
+
+}
+
+@media screen and (max-width:499px) {
+  .maintagline {
     font-size: 2.2rem;
   }
+
+  .subtagline {
+    font-size: 1rem;
+    top: 35%;
+    left: 50%;
+    font-weight: 200;
+  }
+
+  .blogimg {
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    top: -30%;
+    left: -64%;
+
+  }
+
+  .spanText {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 60%;
+    left: 35%;
+
+  }
+
+  .rlup {
+
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 35%;
+    left: 70%;
+
+  }
+
 }
